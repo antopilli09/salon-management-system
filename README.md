@@ -4,7 +4,7 @@
 
 ### Dashboard
 
-<img width="1920" height="1020" alt="Screenshot 2026-10-08 171042" src="https://github.com/user-attachments/assets/f4cccf64-afec-4a7f-8d18-64023cb7ba10" />
+<img width="1920" height="1020" alt="Screenshot 2026-10-09 010557" src="https://github.com/user-attachments/assets/bd27371b-a260-4769-be9d-33d7cba09588" />
 
 
 ### Login
