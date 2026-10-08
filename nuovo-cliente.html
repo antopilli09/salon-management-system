@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Nuovo cliente | Mario Rossi</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+
+  <script src="firebase-config.js"></script>
+  <script src="protezione.js"></script>
+  <script src="nuovo-cliente.js" defer></script>
+</head>
+
+<body>
+
+  <aside class="menu-laterale">
+    <h1>Mario Rossi</h1>
+
+    <nav>
+      <a href="index.html" class="voce-menu">
+        Dashboard
+      </a>
+
+      <a href="clienti.html" class="voce-menu attiva">
+        Archivio clienti
+      </a>
+    </nav>
+  </aside>
+
+  <main class="contenuto">
+
+    <header class="intestazione">
+      <div>
+        <p class="sottotitolo">Gestione del salone</p>
+        <h2>Aggiungi cliente</h2>
+      </div>
+
+      <a
+        href="clienti.html"
+        class="pulsante pulsante-clienti"
+      >
+        Torna all'archivio
+      </a>
+    </header>
+
+    <section class="contenitore-form">
+
+      <form id="form-nuovo-cliente">
+
+        <div class="griglia-form">
+
+          <div class="gruppo-campo">
+            <label for="nome">Nome</label>
+
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              placeholder="Inserisci il nome"
+              autocomplete="given-name"
+              required
+            >
+          </div>
+
+          <div class="gruppo-campo">
+            <label for="cognome">Cognome</label>
+
+            <input
+              type="text"
+              id="cognome"
+              name="cognome"
+              placeholder="Inserisci il cognome"
+              autocomplete="family-name"
+            >
+          </div>
+
+          <div class="gruppo-campo">
+            <label for="telefono">
+              Numero di telefono
+            </label>
+
+            <input
+              type="tel"
+              id="telefono"
+              name="telefono"
+              placeholder="Inserisci il numero"
+              autocomplete="tel"
+            >
+          </div>
+
+          <div class="gruppo-campo">
+            <label for="prezzo">Prezzo</label>
+
+            <input
+              type="number"
+              id="prezzo"
+              name="prezzo"
+              placeholder="0,00"
+              min="0"
+              step="0.01"
+              required
+            >
+          </div>
+
+          <div class="gruppo-campo">
+            <label for="data-appuntamento">
+              Data appuntamento attuale
+            </label>
+
+            <input
+              type="date"
+              id="data-appuntamento"
+              name="data-appuntamento"
+            >
+          </div>
+
+          <div class="gruppo-campo">
+            <label for="prossimo-appuntamento">
+              Data prossimo appuntamento
+            </label>
+
+            <input
+              type="date"
+              id="prossimo-appuntamento"
+              name="prossimo-appuntamento"
+            >
+          </div>
+
+          <div class="gruppo-campo campo-largo">
+            <label for="note">Note cliente</label>
+
+            <textarea
+              id="note"
+              name="note"
+              rows="5"
+              placeholder="Inserisci eventuali preferenze o informazioni utili"
+            ></textarea>
+          </div>
+
+        </div>
+
+        <div class="azioni-form">
+
+          <a
+            href="clienti.html"
+            class="pulsante pulsante-clienti"
+          >
+            Annulla
+          </a>
+
+          <button
+            type="submit"
+            class="pulsante pulsante-primario"
+          >
+            Salva cliente
+          </button>
+
+        </div>
+
+      </form>
+
+    </section>
+
+  </main>
+
+</body>
+</html>

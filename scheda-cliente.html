@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Scheda cliente | Mario Rossi</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+
+  <script src="firebase-config.js"></script>
+  <script src="protezione.js"></script>
+  <script src="scheda-cliente.js"></script>
+</head>
+
+<body>
+
+  <aside class="menu-laterale">
+    <h1>Mario Rossi</h1>
+
+    <nav>
+      <a href="index.html" class="voce-menu">
+        Dashboard
+      </a>
+
+      <a href="clienti.html" class="voce-menu attiva">
+        Archivio clienti
+      </a>
+    </nav>
+  </aside>
+
+  <main class="contenuto">
+
+    <header class="intestazione">
+      <div>
+        <p class="sottotitolo">Archivio clienti</p>
+        <h2>Scheda cliente</h2>
+      </div>
+
+      <a
+        href="clienti.html"
+        class="pulsante pulsante-clienti"
+      >
+        Torna all'archivio
+      </a>
+    </header>
+
+    <section
+      class="scheda-cliente-completa"
+      id="contenuto-scheda"
+    >
+
+      <div class="testata-cliente">
+
+        <div
+          class="avatar-cliente"
+          id="iniziale-cliente"
+        >
+          ?
+        </div>
+
+        <div>
+          <h3 id="nome-cliente">
+            Caricamento...
+          </h3>
+
+          <p id="telefono-cliente">
+            Telefono: caricamento...
+          </p>
+        </div>
+
+      </div>
+
+      <div class="dettagli-cliente">
+
+        <div class="dettaglio">
+          <span>Ultimo appuntamento</span>
+
+          <strong id="ultimo-appuntamento">
+            -
+          </strong>
+        </div>
+
+        <div class="dettaglio">
+          <span>Prossimo appuntamento</span>
+
+          <strong id="prossimo-appuntamento">
+            -
+          </strong>
+        </div>
+
+        <div class="dettaglio">
+          <span>Prezzo</span>
+
+          <strong id="prezzo-cliente">
+            € 0,00
+          </strong>
+        </div>
+
+      </div>
+
+      <div class="sezione-note">
+        <h3>Note cliente</h3>
+
+        <p id="note-cliente">
+          Nessuna nota inserita.
+        </p>
+      </div>
+
+      <div class="sezione-storico">
+
+  <div class="titolo-sezione-storico">
+    <div>
+      <p class="sottotitolo">Cronologia</p>
+      <h3>Storico appuntamenti</h3>
+    </div>
+
+    <button
+      type="button"
+      id="aggiungi-appuntamento"
+      class="pulsante pulsante-primario"
+    >
+      + Aggiungi appuntamento
+    </button>
+  </div>
+
+  <div class="tabella-responsive">
+
+    <table class="tabella-appuntamenti">
+
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Descrizione</th>
+          <th>Prezzo</th>
+          <th>Azioni</th>
+        </tr>
+      </thead>
+
+      <tbody id="corpo-storico">
+        <tr>
+          <td id="storico-data">-</td>
+          <td>Appuntamento iniziale</td>
+          <td id="storico-prezzo">€ 0,00</td>
+        </tr>
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>
+
+<div class="azioni-scheda-cliente">
+
+  <button
+    type="button"
+    id="modifica-cliente"
+    class="pulsante pulsante-modifica"
+  >
+    Modifica cliente
+  </button>
+
+  <button
+    type="button"
+    id="elimina-cliente"
+    class="pulsante pulsante-elimina"
+  >
+    Elimina cliente
+  </button>
+
+</div>
+        

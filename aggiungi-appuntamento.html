@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Nuovo appuntamento | Mario Rossi</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+
+  <script src="firebase-config.js"></script>
+  <script src="protezione.js"></script>
+  <script src="aggiungi-appuntamento.js"></script>
+</head>
+
+<body>
+
+  <aside class="menu-laterale">
+    <h1>Mario Rossi</h1>
+
+    <nav>
+      <a href="index.html" class="voce-menu attiva">
+        Dashboard
+      </a>
+
+      <a href="clienti.html" class="voce-menu">
+        Archivio clienti
+      </a>
+
+      <a href="spese.html" class="voce-menu">
+  Archivio spese
+</a>
+    </nav>
+  </aside>
+
+  <main class="contenuto">
+
+    <header class="intestazione">
+      <div>
+        <p class="sottotitolo">Gestione del salone</p>
+        <h2>Nuovo appuntamento</h2>
+      </div>
+
+<a
+  id="torna-scheda"
+  href="clienti.html"
+  class="pulsante pulsante-clienti"
+>
+  Torna alla scheda cliente
+</a>
+      
+    </header>
+
+    <section class="contenitore-form">
+
+      <form id="form-aggiungi-appuntamento">
+
+        <div class="griglia-form">
+
+          <div class="gruppo-campo">
+<label for="data-appuntamento">
+  Data appuntamento
+</label>
+
+<input
+  type="date"
+  id="data-appuntamento"
+  name="data-appuntamento"
+>
+          </div>
+
+          <div class="gruppo-campo">
+<label for="prezzo-appuntamento">
+  Prezzo
+</label>
+
+            <input
+              type="number"
+              id="prezzo-appuntamento"
+              name="prezzo-appuntamento"
+              placeholder="0,00"
+              min="0"
+              step="0.01"
+              required
+            >
+          </div>
+
+          <div class="gruppo-campo campo-largo">
+<label for="descrizione-appuntamento">
+  Servizio effettuato
+</label>
+
+            <input
+              type="text"
+              id="descrizione-appuntamento"
+              name="descrizione-appuntamento"
+              placeholder="Taglio, piega, colore..."
+              required
+            >
+          </div>
+
+<div class="gruppo-campo">
+  <label for="prossimo-appuntamento">
+    Prossimo appuntamento
+  </label>
+
+  <input
+    type="date"
+    id="prossimo-appuntamento"
+    name="prossimo-appuntamento"
+  >
+</div>
+
+          <div class="gruppo-campo campo-largo">
+<label for="note-appuntamento">
+  Note
+</label>
+
+<textarea
+  id="note-appuntamento"
+  name="note-appuntamento"
+  rows="5"
+  placeholder="Inserisci eventuali note"
+></textarea>
+          </div>
+
+        </div>
+
+<p id="messaggio-modifica"></p>
+
+        <div class="azioni-form">
+
+<a
+  id="annulla-modifica"
+  href="clienti.html"
+  class="pulsante pulsante-clienti"
+>
+  Annulla
+</a>
+
+<button
+  type="submit"
+  id="salva-appuntamento"
+  class="pulsante pulsante-primario"
+>
+  Salva appuntamento
+</button>
+
+        </div>
+
+      </form>
+
+    </section>
+
+  </main>
+
+</body>
+</html>

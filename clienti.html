@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Archivio clienti | Mario Rossi</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+
+  <script src="firebase-config.js"></script>
+  <script src="protezione.js"></script>
+  <script src="clienti.js" defer></script>
+</head>
+
+<body>
+
+  <aside class="menu-laterale">
+    <h1>Mario Rossi</h1>
+
+    <nav>
+      <a href="index.html" class="voce-menu">
+        Dashboard
+      </a>
+
+      <a href="clienti.html" class="voce-menu attiva">
+        Archivio clienti
+      </a>
+      
+      <a href="spese.html" class="voce-menu">
+        Archivio spese
+      </a>
+    </nav>
+  </aside>
+
+  <main class="contenuto">
+
+    <header class="intestazione">
+      <div>
+        <p class="sottotitolo">Gestione del salone</p>
+        <h2>Archivio clienti</h2>
+      </div>
+
+      <a
+        href="nuovo-cliente.html"
+        class="pulsante pulsante-primario"
+      >
+        + Aggiungi cliente
+      </a>
+    </header>
+
+    <section class="strumenti-clienti">
+
+      <div class="campo-ricerca">
+        <label for="ricerca-cliente">
+          Cerca una cliente
+        </label>
+
+        <input
+          type="search"
+          id="ricerca-cliente"
+          placeholder="Cerca per nome, cognome o telefono"
+          autocomplete="off"
+        >
+      </div>
+
+      <div class="totale-clienti">
+        <span>Clienti visualizzate</span>
+        <strong id="numero-clienti">3</strong>
+      </div>
+
+    </section>
+
+    <section class="griglia-clienti" id="lista-clienti">
+    </section>
+
+    <p id="nessun-risultato" class="nessun-risultato">
+      Nessuna cliente trovata.
+    </p>
+
+  </main>
+
+</body>
+</html>

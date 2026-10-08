@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Archivio spese | Mario Rossi</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+
+  <script src="firebase-config.js"></script>
+  <script src="protezione.js"></script>
+  <script src="spese.js"></script>
+</head>
+
+<body>
+
+  <aside class="menu-laterale">
+    <h1>Mario Rossi</h1>
+
+    <nav>
+      <a href="index.html" class="voce-menu">
+        Dashboard
+      </a>
+
+      <a href="clienti.html" class="voce-menu">
+        Archivio clienti
+      </a>
+
+  <a href="spese.html" class="voce-menu attiva">
+    Archivio spese
+  </a>
+    </nav>
+  </aside>
+
+  <main class="contenuto">
+
+    <header class="intestazione">
+
+      <div>
+        <p class="sottotitolo">Gestione del salone</p>
+        <h2>Archivio spese</h2>
+      </div>
+
+      <a
+        href="nuova-spesa.html"
+        class="pulsante pulsante-primario"
+      >
+        + Nuova spesa
+      </a>
+
+    </header>
+
+    <section class="strumenti-spese">
+
+      <div class="campo-ricerca">
+        <label for="ricerca-spesa">
+          Cerca una spesa
+        </label>
+
+        <input
+          type="search"
+          id="ricerca-spesa"
+          placeholder="Cerca per descrizione, categoria o data"
+          autocomplete="off"
+        >
+      </div>
+
+      <div class="riepilogo-archivio-spese">
+
+        <div class="totale-spese-registrate">
+          <span>Spese visualizzate</span>
+          <strong id="numero-spese">0</strong>
+        </div>
+
+        <div class="totale-importo-spese">
+          <span>Totale visualizzato</span>
+          <strong id="totale-spese">€ 0,00</strong>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="contenitore-tabella-spese">
+
+      <div class="tabella-responsive">
+
+        <table class="tabella-spese">
+
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Descrizione</th>
+              <th>Categoria</th>
+              <th>Importo</th>
+              <th>Azioni</th>
+            </tr>
+          </thead>
+
+          <tbody id="corpo-tabella-spese">
+          </tbody>
+
+        </table>
+
+      </div>
+
+      <p id="nessuna-spesa" class="nessun-risultato">
+        Nessuna spesa trovata.
+      </p>
+
+    </section>
+
+  </main>
+
+</body>
+</html>

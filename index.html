@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Gestionale Mario Rossi</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.19/main.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.19/index.global.min.js"></script>
+
+  <script src="firebase-config.js"></script>
+  <script src="protezione.js"></script>
+  <script src="dashboard.js"></script>
+</head>
+
+<body>
+
+  <aside class="menu-laterale">
+    <h1>Mario Rossi</h1>
+
+    <nav>
+      <a href="index.html" class="voce-menu attiva">
+        Dashboard
+      </a>
+
+      <a href="clienti.html" class="voce-menu">
+        Archivio clienti
+      </a>
+
+            <a href="spese.html" class="voce-menu">
+        Archivio spese
+      </a>
+
+      <a href="cartella-colori.html" class="voce-menu">
+        Cartella colori
+      </a>
+    </nav>
+  </aside>
+
+  <main class="contenuto">
+
+    <header class="intestazione">
+
+      <div>
+        <p class="sottotitolo">Gestionale del salone</p>
+        <h2>Dashboard</h2>
+      </div>
+
+      <div class="selettore-periodo">
+        <label for="periodo-riepilogo">
+          Periodo
+        </label>
+
+        <select id="periodo-riepilogo">
+          <option value="oggi">Oggi</option>
+          <option value="sette-giorni">Ultimi 7 giorni</option>
+          <option value="mese">Questo mese</option>
+          <option value="anno">Quest'anno</option>
+        </select>
+      </div>
+
+    </header>
+
+    <section class="riepilogo">
+
+      <article class="scheda scheda-incasso">
+        <p id="titolo-incasso">Incasso oggi</p>
+
+        <strong id="incasso-oggi">
+          € 320,00
+        </strong>
+      </article>
+
+      <article class="scheda scheda-spese">
+        <p id="titolo-spese">Spese oggi</p>
+
+        <strong id="spese-oggi">
+          € 40,00
+        </strong>
+
+        <a
+          href="nuova-spesa.html"
+          class="pulsante-interno pulsante-spesa"
+        >
+          + Nuova spesa
+        </a>
+      </article>
+
+      <article class="scheda scheda-clienti">
+        <p id="titolo-clienti">Clienti oggi</p>
+
+        <strong id="clienti-oggi">
+          5
+        </strong>
+      </article>
+
+<article class="scheda scheda-guadagno">
+  <p id="titolo-guadagno">Guadagno oggi</p>
+
+  <strong id="guadagno-oggi">
+    € 280,00
+  </strong>
+</article>
+
+</section>
+
+<section class="calendario-dashboard">
+
+  <h3>Calendario appuntamenti</h3>
+
+  <div id="calendario-appuntamenti">
+  </div>
+
+  <div
+    id="appuntamenti-giorno"
+    class="appuntamenti-giorno"
+  >
+  </div>
+
+</section>
+
+    </section>
+
+  </main>
+
+</body>
+</html>

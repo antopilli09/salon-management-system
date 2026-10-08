@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Cartella colori | Mario Rossi</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+
+<script src="firebase-config.js"></script>
+<script src="protezione.js"></script>
+<script src="cartella-colori.js"></script>
+</head>
+
+<body>
+
+  <aside class="menu-laterale">
+    <h1>Mario Rossi</h1>
+
+    <nav>
+      <a href="index.html" class="voce-menu">
+        Dashboard
+      </a>
+
+      <a href="clienti.html" class="voce-menu">
+        Archivio clienti
+      </a>
+
+      <a href="spese.html" class="voce-menu">
+        Archivio spese
+      </a>
+
+      <a
+        href="cartella-colori.html"
+        class="voce-menu attiva"
+      >
+        Cartella colori
+      </a>
+    </nav>
+  </aside>
+
+  <main class="contenuto">
+
+    <header class="intestazione">
+      <div>
+        <p class="sottotitolo">
+          Gestione del salone
+        </p>
+
+        <h2>Cartella colori</h2>
+      </div>
+
+      <a
+        href="nuova-cartella-colore.html"
+        class="pulsante pulsante-primario"
+      >
+        + Aggiungi colore
+      </a>
+    </header>
+
+    <section class="strumenti-clienti">
+
+      <div class="campo-ricerca">
+<label for="ricerca-colore">
+  Cerca per nome
+</label>
+
+
+<input
+  type="search"
+  id="ricerca-colore"
+  placeholder="Esempio: Vera, Esmeralda, Valentina"
+  autocomplete="off"
+>
+      </div>
+
+      <div class="totale-clienti">
+        <span>Cartelle visualizzate</span>
+
+        <strong id="numero-cartelle">
+          0
+        </strong>
+      </div>
+
+    </section>
+
+    <section
+      class="griglia-clienti"
+      id="lista-cartelle-colori"
+    >
+    </section>
+
+    <p
+      id="nessuna-cartella"
+      class="nessun-risultato"
+    >
+      Nessuna cartella colore trovata.
+    </p>
+
+  </main>
+
+</body>
+</html>

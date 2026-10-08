@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+
+  <title>Nuova spesa | Mario Rossi</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+
+  <script src="firebase-config.js"></script>
+  <script src="protezione.js"></script>
+  <script src="nuova-spesa.js"></script>
+</head>
+
+<body>
+
+  <aside class="menu-laterale">
+    <h1>Mario Rossi</h1>
+
+    <nav>
+      <a href="index.html" class="voce-menu attiva">
+        Dashboard
+      </a>
+
+      <a href="clienti.html" class="voce-menu">
+        Archivio clienti
+      </a>
+
+      <a href="spese.html" class="voce-menu">
+  Archivio spese
+</a>
+    </nav>
+  </aside>
+
+  <main class="contenuto">
+
+    <header class="intestazione">
+      <div>
+        <p class="sottotitolo">Gestione del salone</p>
+        <h2>Nuova spesa</h2>
+      </div>
+
+      <a
+        href="index.html"
+        class="pulsante pulsante-clienti"
+      >
+        Torna alla Dashboard
+      </a>
+    </header>
+
+    <section class="contenitore-form">
+
+      <form id="form-nuova-spesa">
+
+        <div class="griglia-form">
+
+          <div class="gruppo-campo">
+            <label for="data-spesa">
+              Data della spesa
+            </label>
+
+            <input
+              type="date"
+              id="data-spesa"
+              name="data-spesa"
+              required
+            >
+          </div>
+
+          <div class="gruppo-campo">
+            <label for="importo-spesa">
+              Importo
+            </label>
+
+            <input
+              type="number"
+              id="importo-spesa"
+              name="importo-spesa"
+              placeholder="0,00"
+              min="0"
+              step="0.01"
+              required
+            >
+          </div>
+
+          <div class="gruppo-campo campo-largo">
+            <label for="descrizione-spesa">
+              Descrizione della spesa
+            </label>
+
+            <input
+              type="text"
+              id="descrizione-spesa"
+              name="descrizione-spesa"
+              placeholder="Esempio: shampoo, colore o prodotti per capelli"
+              required
+            >
+          </div>
+
+          <div class="gruppo-campo campo-largo">
+            <label for="categoria-spesa">
+              Categoria
+            </label>
+
+            <select
+              id="categoria-spesa"
+              name="categoria-spesa"
+              required
+            >
+              <option value="">
+                Seleziona una categoria
+              </option>
+
+              <option value="prodotti-capelli">
+                Prodotti per capelli
+              </option>
+
+              <option value="colori">
+                Colori e trattamenti
+              </option>
+
+              <option value="attrezzatura">
+                Attrezzatura
+              </option>
+
+              <option value="materiali">
+                Materiali di consumo
+              </option>
+
+              <option value="spese-salone">
+                Spese del salone
+              </option>
+
+<option value="pos">
+  POS
+</option>
+
+              <option value="altro">
+                Altro
+              </option>
+            </select>
+          </div>
+
+          <div class="gruppo-campo campo-largo">
+            <label for="note-spesa">
+              Note
+            </label>
+
+            <textarea
+              id="note-spesa"
+              name="note-spesa"
+              rows="5"
+              placeholder="Inserisci eventuali informazioni aggiuntive"
+            ></textarea>
+          </div>
+
+        </div>
+
+        <div class="azioni-form">
+
+          <a
+            href="index.html"
+            class="pulsante pulsante-clienti"
+          >
+            Annulla
+          </a>
+
+          <button
+            type="submit"
+            class="pulsante pulsante-primario"
+          >
+            Salva spesa
+          </button>
+
+        </div>
+
+      </form>
+
+    </section>
+
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Accesso | Mario Rossi</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="pagina-accesso">
+
+  <main class="contenitore-accesso">
+
+    <section class="scheda-accesso">
+
+      <div class="logo-accesso">
+        MI
+      </div>
+
+      <p class="sottotitolo">
+        Gestionale del salone
+      </p>
+
+      <h1>Mario Rossi</h1>
+
+      <p class="descrizione-accesso">
+        Inserisci le credenziali per accedere al gestionale.
+      </p>
+
+      <form id="form-accesso">
+
+        <div class="gruppo-campo">
+          <label for="email-accesso">
+            Email
+          </label>
+
+          <input
+            type="email"
+            id="email-accesso"
+            name="email"
+            placeholder="Inserisci l'email"
+            autocomplete="email"
+            required
+          >
+        </div>
+
+        <div class="gruppo-campo">
+          <label for="password-accesso">
+            Password
+          </label>
+
+          <input
+            type="password"
+            id="password-accesso"
+            name="password"
+            placeholder="Inserisci la password"
+            autocomplete="current-password"
+            required
+          >
+        </div>
+
+        <p
+          id="messaggio-accesso"
+          class="messaggio-accesso"
+        ></p>
+
+        <button
+          type="submit"
+          id="pulsante-accesso"
+          class="pulsante pulsante-primario pulsante-accesso"
+        >
+          Accedi
+        </button>
+
+      </form>
+
+    </section>
+
+  </main>
+
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="accesso.js"></script>
+
+</body>
+</html>

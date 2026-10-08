@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Modifica cartella colore | Mario Rossi</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+
+  <script src="firebase-config.js"></script>
+  <script src="protezione.js"></script>
+<script src="modifica-cartella-colore.js"></script>
+</head>
+
+<body>
+
+  <aside class="menu-laterale">
+    <h1>Mario Rossi</h1>
+
+    <nav>
+      <a href="index.html" class="voce-menu">
+        Dashboard
+      </a>
+
+      <a href="clienti.html" class="voce-menu">
+        Archivio clienti
+      </a>
+
+      <a href="spese.html" class="voce-menu">
+        Archivio spese
+      </a>
+
+<a href="cartella-colori.html" class="voce-menu">
+  Cartella colori
+</a>
+    </nav>
+  </aside>
+
+  <main class="contenuto">
+
+    <header class="intestazione">
+      <div>
+        <p class="sottotitolo">
+          Gestione del salone
+        </p>
+
+        <h2>Modifica cartella colore</h2>
+      </div>
+
+<a
+  id="torna-scheda"
+  href="cartella-colori.html"
+  class="pulsante pulsante-clienti"
+>
+  Torna all'archivio
+</a>
+    </header>
+
+    <section class="contenitore-form">
+
+<form id="form-modifica-cartella-colore">
+
+        <div class="griglia-form">
+
+          <div class="gruppo-campo">
+            <label for="nome">
+              Nome
+            </label>
+
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              placeholder="Inserisci il nome"
+            >
+          </div>
+
+          <div class="gruppo-campo">
+            <label for="cognome">
+              Cognome
+            </label>
+
+            <input
+              type="text"
+              id="cognome"
+              name="cognome"
+              placeholder="Inserisci il cognome"
+            >
+          </div>
+
+          <div class="gruppo-campo">
+            <label for="telefono">
+              Numero di telefono
+            </label>
+
+            <input
+              type="tel"
+              id="telefono"
+              name="telefono"
+              placeholder="Facoltativo"
+            >
+          </div>
+
+          <div class="gruppo-campo">
+            <label for="data">
+              Data
+            </label>
+
+            <input
+              type="date"
+              id="data"
+              name="data"
+            >
+          </div>
+
+          <div class="gruppo-campo campo-largo">
+            <label for="colore">
+              Colore
+            </label>
+
+            <textarea
+              id="colore"
+              name="colore"
+              rows="6"
+              placeholder="Inserisci formula, ossigeno, tempi di posa e dettagli del colore"
+              required
+            ></textarea>
+          </div>
+
+          <div class="gruppo-campo campo-largo">
+            <label for="note">
+              Note
+            </label>
+
+            <textarea
+              id="note"
+              name="note"
+              rows="5"
+              placeholder="Inserisci eventuali note"
+            ></textarea>
+          </div>
+
+        </div>
+
+        <p id="messaggio-modifica"></p>
+
+        <div class="azioni-form">
+
+<a
+  id="annulla-modifica"
+  href="cartella-colori.html"
+  class="pulsante pulsante-clienti"
+>
+  Annulla
+</a>
+
+<button
+  type="submit"
+  id="salva-modifica-cartella"
+  class="pulsante pulsante-primario"
+>
+  Salva modifiche
+</button>
+
+        </div>
+
+      </form>
+
+    </section>
+
+  </main>
+
+</body>
+</html>

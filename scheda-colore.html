@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Scheda colore | Mario Rossi</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+
+  <script src="firebase-config.js"></script>
+  <script src="protezione.js"></script>
+  <script src="scheda-colore.js"></script>
+</head>
+
+<body>
+
+  <aside class="menu-laterale">
+    <h1>Mario Rossi</h1>
+
+    <nav>
+      <a href="index.html" class="voce-menu">
+        Dashboard
+      </a>
+
+      <a href="clienti.html" class="voce-menu">
+        Archivio clienti
+      </a>
+
+      <a href="spese.html" class="voce-menu">
+        Archivio spese
+      </a>
+
+      <a
+        href="cartella-colori.html"
+        class="voce-menu attiva"
+      >
+        Cartella colori
+      </a>
+    </nav>
+  </aside>
+
+  <main class="contenuto">
+
+    <header class="intestazione">
+      <div>
+        <p class="sottotitolo">
+          Archivio cartelle colore
+        </p>
+
+        <h2>Scheda colore</h2>
+      </div>
+
+      <a
+        href="cartella-colori.html"
+        class="pulsante pulsante-clienti"
+      >
+        Torna all'archivio
+      </a>
+    </header>
+
+    <section
+      class="scheda-cliente-completa"
+      id="contenuto-scheda-colore"
+    >
+
+      <div class="testata-cliente">
+
+        <div
+          class="avatar-cliente"
+          id="iniziale-colore"
+        >
+          ?
+        </div>
+
+        <div>
+          <h3 id="nome-cartella-colore">
+            Caricamento...
+          </h3>
+
+          <p id="telefono-cartella-colore">
+            Telefono: caricamento...
+          </p>
+        </div>
+
+      </div>
+
+      <div class="dettagli-cliente">
+
+        <div class="dettaglio">
+          <span>Data</span>
+
+          <strong id="data-cartella-colore">
+            Non indicata
+          </strong>
+        </div>
+
+      </div>
+
+      <div class="sezione-note">
+        <h3>Colore</h3>
+
+        <p id="formula-cartella-colore">
+          Caricamento...
+        </p>
+      </div>
+
+      <div class="sezione-note">
+        <h3>Note</h3>
+
+        <p id="note-cartella-colore">
+          Nessuna nota inserita.
+        </p>
+      </div>
+
+      <div class="azioni-scheda-cliente">
+
+        <button
+          type="button"
+          id="modifica-cartella-colore"
+          class="pulsante pulsante-modifica"
+        >
+          Modifica cartella
+        </button>
+
+        <button
+          type="button"
+          id="elimina-cartella-colore"
+          class="pulsante pulsante-elimina"
+        >
+          Elimina cartella
+        </button>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</body>
+</html>
