@@ -2,14 +2,13 @@
 
 ## Screenshots
 
-### Dashboard
-
-<img width="1920" height="1020" alt="Screenshot 2026-10-09 010557" src="https://github.com/user-attachments/assets/bd27371b-a260-4769-be9d-33d7cba09588" />
-
-
 ### Login
 
 <img width="1920" height="1020" alt="Screenshot 2026-10-08 171252" src="https://github.com/user-attachments/assets/022c1178-a5c1-4363-bb54-da2c5f75f5d3" />
+
+### Dashboard
+
+<img width="1920" height="1020" alt="Screenshot 2026-10-09 010557" src="https://github.com/user-attachments/assets/bd27371b-a260-4769-be9d-33d7cba09588" />
 
 
 ### Customers
