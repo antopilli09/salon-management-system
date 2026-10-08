@@ -1,5 +1,23 @@
 # Salon Management System
 
+## Screenshots
+
+### Dashboard
+
+![Dashboardenshots/Screenshot%202026-10-08%20171214.png
+
+### Calendar
+
+![Calendareenshots/Screenshot%202026-10-08%20171234.png
+
+### Customers
+
+![Customers](assets/screenshots/Screenshot%20171042.png
+
+### Expenses
+
+![Expenses](assets/screenshots/Screenshot%202026252.png
+
 Web-based salon management system developed with HTML, CSS, JavaScript and Firebase.
 
 ## Features
