@@ -4,19 +4,23 @@
 
 ### Dashboard
 
-![Uploading Screenshot 2026-10-08 171042.png…]()
+<img width="1920" height="1020" alt="Screenshot 2026-10-08 171042" src="https://github.com/user-attachments/assets/f4cccf64-afec-4a7f-8d18-64023cb7ba10" />
 
-### Calendar
 
-![Calendareenshots/Screenshot%202026-10-08%20171234.png
+### Login
+
+<img width="1920" height="1020" alt="Screenshot 2026-10-08 171252" src="https://github.com/user-attachments/assets/022c1178-a5c1-4363-bb54-da2c5f75f5d3" />
+
 
 ### Customers
 
-![Customers](assets/screenshots/Screenshot%20171042.png
+<img width="1920" height="1020" alt="Screenshot 2026-10-08 171234" src="https://github.com/user-attachments/assets/ac6d8bb9-6ae3-462a-a4bc-cbbd22ec4fa3" />
+
 
 ### Expenses
 
-![Expenses](assets/screenshots/Screenshot%202026252.png
+<img width="1920" height="1020" alt="Screenshot 2026-10-08 171214" src="https://github.com/user-attachments/assets/bf88e3fb-38ef-497e-9325-52f68c807d46" />
+
 
 Web-based salon management system developed with HTML, CSS, JavaScript and Firebase.
 
