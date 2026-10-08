@@ -4,7 +4,7 @@
 
 ### Dashboard
 
-![Dashboardenshots/Screenshot%202026-10-08%20171214.png
+![Uploading Screenshot 2026-10-08 171042.png…]()
 
 ### Calendar
 
