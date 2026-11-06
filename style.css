@@ -1132,3 +1132,20 @@ body {
 .fc-event {
     cursor: pointer;
 }
+
+.griglia-ricerca {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  align-items: end;
+}
+
+.griglia-ricerca input {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .griglia-ricerca {
+    grid-template-columns: 1fr;
+  }
+}

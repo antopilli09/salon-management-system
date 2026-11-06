@@ -1,4 +1,28 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const parametriUrl =
+    new URLSearchParams(
+      window.location.search
+    );
+
+  const dataCalendario =
+    parametriUrl.get("data");
+
+  const campoDataAppuntamento =
+    document.getElementById(
+      "data-appuntamento"
+    );
+
+  if (
+    dataCalendario &&
+    campoDataAppuntamento &&
+    /^\d{4}-\d{2}-\d{2}$/.test(
+      dataCalendario
+    )
+  ) {
+    campoDataAppuntamento.value =
+      dataCalendario;
+  }
+
   const formCliente = document.getElementById(
     "form-nuovo-cliente"
   );
@@ -40,6 +64,11 @@ document.addEventListener("DOMContentLoaded", function () {
       const prezzo = Number(
         campoPrezzo.value
       );
+
+      const campoPagamento =
+  document.getElementById(
+    "metodo-pagamento"
+  );
 
       const ultimoAppuntamento =
         document.getElementById(
@@ -137,10 +166,17 @@ appuntamenti: ultimoAppuntamento
   ? [
       {
         id: idAppuntamento,
+
         data: ultimoAppuntamento,
+
         descrizione:
           "Appuntamento iniziale",
+
         prezzo: prezzo,
+
+        metodoPagamento:
+          campoPagamento.value,
+
         note: note
       }
     ]

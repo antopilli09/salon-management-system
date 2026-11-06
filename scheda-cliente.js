@@ -174,7 +174,7 @@ await riferimentoCliente.update({
       const riga = document.createElement("tr");
 
       const cella = document.createElement("td");
-      cella.colSpan = 4;
+      cella.colSpan = 5;
       cella.textContent =
         "Nessun appuntamento registrato.";
 
@@ -214,8 +214,42 @@ await riferimentoCliente.update({
             appuntamento.prezzo
           );
 
+          const cellaPagamento =
+  document.createElement("td");
+
+cellaPagamento.textContent =
+  appuntamento.metodoPagamento === "pos"
+    ? "POS"
+    : "Contanti";
+
 const cellaAzioni =
   document.createElement("td");
+
+  const pulsanteModifica =
+  document.createElement("button");
+
+pulsanteModifica.type = "button";
+
+pulsanteModifica.className =
+  "pulsante-tabella pulsante-modifica-spesa";
+
+pulsanteModifica.textContent =
+  "Modifica";
+
+pulsanteModifica.addEventListener(
+  "click",
+  function () {
+
+    window.location.href =
+      "modifica-appuntamento.html?idCliente=" +
+      encodeURIComponent(idCliente) +
+      "&idAppuntamento=" +
+      encodeURIComponent(
+        appuntamento.id
+      );
+
+  }
+);
 
 const pulsanteElimina =
   document.createElement("button");
@@ -238,12 +272,17 @@ pulsanteElimina.addEventListener(
 );
 
 cellaAzioni.appendChild(
+  pulsanteModifica
+);
+
+cellaAzioni.appendChild(
   pulsanteElimina
 );
 
         riga.appendChild(cellaData);
         riga.appendChild(cellaDescrizione);
         riga.appendChild(cellaPrezzo);
+        riga.appendChild(cellaPagamento);
 riga.appendChild(cellaAzioni);
 
         corpoStorico.appendChild(riga);

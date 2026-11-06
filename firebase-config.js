@@ -1,10 +1,10 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyDXwkGZZhXSCAnTC-dstFuaSnc_Ih8k9Yo",
-  authDomain: "salonmanagementsystem-2e685.firebaseapp.com",
-  projectId: "salonmanagementsystem-2e685",
-  storageBucket: "salonmanagementsystem-2e685.firebasestorage.app",
-  messagingSenderId: "20347810164",
-  appId: "1:20347810164:web:05c7617cb7e7fd39957c21"
+  apiKey: "AIzaSyDogJvTQM-lDhTzCDzpwRucF8UKaChr9Lc",
+  authDomain: "gestionale-mille-idee.firebaseapp.com",
+  projectId: "gestionale-mille-idee",
+  storageBucket: "gestionale-mille-idee.firebasestorage.app",
+  messagingSenderId: "169255247812",
+  appId: "1:169255247812:web:bfa07f0ae539ac9a918e91"
 };
 
 firebase.initializeApp(firebaseConfig);

@@ -40,6 +40,11 @@ document.addEventListener(
         "note-appuntamento"
       );
 
+      const campoPagamento =
+  document.getElementById(
+    "metodo-pagamento"
+  );
+
     const tornaScheda =
       document.getElementById(
         "torna-scheda"
@@ -99,23 +104,23 @@ document.addEventListener(
               ? [...cliente.appuntamenti]
               : [];
 
-          appuntamenti.push({
-            id: Date.now().toString(),
+appuntamenti.push({
+  id: Date.now().toString(),
 
-            data:
-              campoData.value,
+  data: campoData.value,
 
-            descrizione:
-              campoDescrizione.value.trim(),
+  descrizione:
+    campoDescrizione.value.trim(),
 
-            prezzo:
-              Number(
-                campoPrezzo.value
-              ),
+  prezzo:
+    Number(campoPrezzo.value),
 
-            note:
-              campoNote.value.trim()
-          });
+  metodoPagamento:
+    campoPagamento.value,
+
+  note:
+    campoNote.value.trim()
+});
 
           await riferimentoCliente.update({
 

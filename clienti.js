@@ -7,6 +7,11 @@ document.addEventListener("DOMContentLoaded", function () {
     "ricerca-cliente"
   );
 
+  const campoRicercaData =
+  document.getElementById(
+    "ricerca-data"
+  );
+
   const numeroClienti = document.getElementById(
     "numero-clienti"
   );
@@ -15,12 +20,13 @@ document.addEventListener("DOMContentLoaded", function () {
     "nessun-risultato"
   );
 
-  if (
-    !listaClienti ||
-    !campoRicerca ||
-    !numeroClienti ||
-    !nessunRisultato
-  ) {
+if (
+  !listaClienti ||
+  !campoRicerca ||
+  !campoRicercaData ||
+  !numeroClienti ||
+  !nessunRisultato
+) {
     console.error(
       "Errore: alcuni elementi dell'Archivio clienti non sono stati trovati."
     );
@@ -214,39 +220,72 @@ document.addEventListener("DOMContentLoaded", function () {
         : "none";
   }
 
-  function applicaRicerca() {
-    const ricerca = normalizzaTesto(
-      campoRicerca.value
+function applicaRicerca() {
+  const ricercaTesto = normalizzaTesto(
+    campoRicerca.value
+  );
+
+  const ricercaData =
+    campoRicercaData.value;
+
+  const clientiFiltrate =
+    clientiOnline.filter(
+      function (cliente) {
+
+        const contenutoRicerca =
+          normalizzaTesto(
+            [
+              cliente.nome,
+              cliente.cognome,
+              cliente.telefono,
+              cliente.ultimoAppuntamento,
+              cliente.prossimoAppuntamento,
+              cliente.note
+            ].join(" ")
+          );
+
+        const corrispondeTesto =
+          !ricercaTesto ||
+          contenutoRicerca.includes(
+            ricercaTesto
+          );
+
+        const appuntamenti =
+          Array.isArray(
+            cliente.appuntamenti
+          )
+            ? cliente.appuntamenti
+            : [];
+
+        const dataNelloStorico =
+          appuntamenti.some(
+            function (appuntamento) {
+              return (
+                appuntamento.data ===
+                ricercaData
+              );
+            }
+          );
+
+        const corrispondeData =
+          !ricercaData ||
+          cliente.ultimoAppuntamento ===
+            ricercaData ||
+          cliente.prossimoAppuntamento ===
+            ricercaData ||
+          dataNelloStorico;
+
+        return (
+          corrispondeTesto &&
+          corrispondeData
+        );
+      }
     );
 
-    if (!ricerca) {
-      mostraClienti(clientiOnline);
-      return;
-    }
-
-    const clientiFiltrate =
-      clientiOnline.filter(
-        function (cliente) {
-          const contenutoRicerca =
-            normalizzaTesto(
-              [
-                cliente.nome,
-                cliente.cognome,
-                cliente.telefono,
-                cliente.ultimoAppuntamento,
-                cliente.prossimoAppuntamento,
-                cliente.note
-              ].join(" ")
-            );
-
-          return contenutoRicerca.includes(
-            ricerca
-          );
-        }
-      );
-
-    mostraClienti(clientiFiltrate);
-  }
+  mostraClienti(
+    clientiFiltrate
+  );
+}
 
   function ordinaClienti(clienti) {
     return clienti.sort(
@@ -352,6 +391,11 @@ document.addEventListener("DOMContentLoaded", function () {
     "input",
     applicaRicerca
   );
+
+  campoRicercaData.addEventListener(
+  "change",
+  applicaRicerca
+);
 
   caricaClientiOnline();
 });

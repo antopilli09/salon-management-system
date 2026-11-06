@@ -19,6 +19,14 @@ document.addEventListener("DOMContentLoaded", function () {
     "titolo-guadagno"
   );
 
+  const titoloContanti = document.getElementById(
+  "titolo-contanti"
+);
+
+const titoloPos = document.getElementById(
+  "titolo-pos"
+);
+
   const valoreIncasso = document.getElementById(
     "incasso-oggi"
   );
@@ -35,17 +43,29 @@ document.addEventListener("DOMContentLoaded", function () {
     "guadagno-oggi"
   );
 
-  if (
-    !selettorePeriodo ||
-    !titoloIncasso ||
-    !titoloSpese ||
-    !titoloClienti ||
-    !titoloGuadagno ||
-    !valoreIncasso ||
-    !valoreSpese ||
-    !valoreClienti ||
-    !valoreGuadagno
-  ) {
+  const valoreContanti = document.getElementById(
+  "contanti-oggi"
+);
+
+const valorePos = document.getElementById(
+  "pos-oggi"
+);
+
+if (
+  !selettorePeriodo ||
+  !titoloIncasso ||
+  !titoloSpese ||
+  !titoloClienti ||
+  !titoloGuadagno ||
+  !titoloContanti ||
+  !titoloPos ||
+  !valoreIncasso ||
+  !valoreSpese ||
+  !valoreClienti ||
+  !valoreGuadagno ||
+  !valoreContanti ||
+  !valorePos
+) {
     console.error(
       "Errore: alcuni elementi della Dashboard non sono stati trovati."
     );
@@ -209,18 +229,21 @@ document.addEventListener("DOMContentLoaded", function () {
         ) {
           cliente.appuntamenti.forEach(
             function (appuntamento) {
-              appuntamenti.push({
-                clienteId:
-                  cliente.id,
+appuntamenti.push({
+  clienteId:
+    cliente.id,
 
-                data:
-                  appuntamento.data,
+  data:
+    appuntamento.data,
 
-                prezzo:
-                  Number(
-                    appuntamento.prezzo
-                  ) || 0
-              });
+  prezzo:
+    Number(
+      appuntamento.prezzo
+    ) || 0,
+
+  metodoPagamento:
+    appuntamento.metodoPagamento || ""
+});
             }
           );
         } else if (
@@ -236,7 +259,9 @@ document.addEventListener("DOMContentLoaded", function () {
             prezzo:
               Number(
                 cliente.prezzo
-              ) || 0
+              ) || 0,
+
+              metodoPagamento: ""
           });
         }
       }
@@ -245,12 +270,14 @@ document.addEventListener("DOMContentLoaded", function () {
     return appuntamenti;
   }
 
-  function mostraCaricamento() {
-    valoreIncasso.textContent = "...";
-    valoreSpese.textContent = "...";
-    valoreClienti.textContent = "...";
-    valoreGuadagno.textContent = "...";
-  }
+function mostraCaricamento() {
+  valoreIncasso.textContent = "...";
+  valoreSpese.textContent = "...";
+  valoreClienti.textContent = "...";
+  valoreGuadagno.textContent = "...";
+  valoreContanti.textContent = "...";
+  valorePos.textContent = "...";
+}
 
   function aggiornaDashboard() {
     if (
@@ -278,6 +305,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     titoloGuadagno.textContent =
       "Guadagno " + testoPeriodo;
+
+      titoloContanti.textContent =
+  "Contanti " + testoPeriodo;
+
+titoloPos.textContent =
+  "POS " + testoPeriodo;
 
     const appuntamenti =
       creaListaAppuntamenti(
@@ -321,6 +354,52 @@ document.addEventListener("DOMContentLoaded", function () {
         0
       );
 
+const totaleContanti =
+  appuntamentiFiltrati.reduce(
+    function (
+      totale,
+      appuntamento
+    ) {
+      if (
+        appuntamento.metodoPagamento !==
+        "contanti"
+      ) {
+        return totale;
+      }
+
+      return (
+        totale +
+        Number(
+          appuntamento.prezzo || 0
+        )
+      );
+    },
+    0
+  );
+
+const totalePos =
+  appuntamentiFiltrati.reduce(
+    function (
+      totale,
+      appuntamento
+    ) {
+      if (
+        appuntamento.metodoPagamento !==
+        "pos"
+      ) {
+        return totale;
+      }
+
+      return (
+        totale +
+        Number(
+          appuntamento.prezzo || 0
+        )
+      );
+    },
+    0
+  );
+
     const speseTotali =
       speseFiltrate.reduce(
         function (
@@ -359,6 +438,16 @@ document.addEventListener("DOMContentLoaded", function () {
       formattaEuro(
         incassoTotale
       );
+
+      valoreContanti.textContent =
+  formattaEuro(
+    totaleContanti
+  );
+
+valorePos.textContent =
+  formattaEuro(
+    totalePos
+  );
 
     valoreSpese.textContent =
       formattaEuro(
@@ -551,9 +640,11 @@ const calendario = new FullCalendar.Calendar(
     },
 
     dateClick: function (info) {
-      mostraAppuntamentiGiorno(
-        info.dateStr
-      );
+window.location.href =
+  "nuovo-cliente.html?data=" +
+  encodeURIComponent(
+    info.dateStr
+  );
     }
   }
 );

@@ -8,13 +8,12 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <title>Gestionale Mario Rossi</title>
+  <title>Gestionale Mille Idee</title>
 
   <link rel="stylesheet" href="style.css">
   <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.19/main.min.css">
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.19/index.global.min.js"></script>
 
   <script src="firebase-config.js"></script>
@@ -25,7 +24,7 @@
 <body>
 
   <aside class="menu-laterale">
-    <h1>Mario Rossi</h1>
+    <h1>Mille Idee</h1>
 
     <nav>
       <a href="index.html" class="voce-menu attiva">
@@ -79,6 +78,26 @@
           € 320,00
         </strong>
       </article>
+
+      <article class="scheda scheda-contanti">
+  <p id="titolo-contanti">
+    Contanti oggi
+  </p>
+
+  <strong id="contanti-oggi">
+    € 0,00
+  </strong>
+</article>
+
+<article class="scheda scheda-pos">
+  <p id="titolo-pos">
+    POS oggi
+  </p>
+
+  <strong id="pos-oggi">
+    € 0,00
+  </strong>
+</article>
 
       <article class="scheda scheda-spese">
         <p id="titolo-spese">Spese oggi</p>
