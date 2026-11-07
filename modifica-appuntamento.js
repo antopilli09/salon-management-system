@@ -31,6 +31,11 @@ document.addEventListener(
         "prezzo-appuntamento"
       );
 
+      const campoPagamento =
+  document.getElementById(
+    "metodo-pagamento"
+  );
+
     const campoDescrizione =
       document.getElementById(
         "descrizione-appuntamento"
@@ -86,6 +91,10 @@ document.addEventListener(
     campoPrezzo.value =
       appuntamento.prezzo || "";
 
+      campoPagamento.value =
+  appuntamento.metodoPagamento ||
+  "contanti";
+
     campoNote.value =
       appuntamento.note || "";
 
@@ -125,6 +134,9 @@ document.addEventListener(
             Number(
               campoPrezzo.value
             ),
+
+metodoPagamento:
+  campoPagamento.value,
 
           note:
             campoNote.value.trim()
